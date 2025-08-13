@@ -20,8 +20,7 @@ maintenance:maintenance
 operator:operator
 
 # OpenLDAP Commands:
-
-# View the OpenLDAP database config file to verify your LDAP settings (most will fall under the "/bitnami/openldap/slapd.d/cn=config" directory): 
+View the OpenLDAP database config file to verify your LDAP settings (most will fall under the "/bitnami/openldap/slapd.d/cn=config" directory): 
  
  cat /bitnami/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}mdb.ldif
 
