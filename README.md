@@ -10,6 +10,18 @@ Simple preconfigured Docker OpenLDAP server for CtrlX OS demonstration.
 	- I may add a REST API permission configuration script that a user can execute.
 4. Run restart.sh to restart an existing LDAP server with persisted changes.
 
+# CtrlX OS Configuration
+Authentication service = LDAP
+Server port = 1389
+Server type = Open LDAP
+Base DN = "dc=bosch,dc=com"
+Read-only user = boschrexroth
+Read-only password = boschrexroth
+User filter = (objectClass=person)
+Group filter = (objectClass=groupOfNames)
+Username attribute = uid
+Groupmembers attribute = member
+
 # RBAC Structure
 There are 3 groups with a single user in each group. grp_engineer, grp_maintenance, grp_operator
 
