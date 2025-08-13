@@ -20,15 +20,16 @@ maintenance:maintenance
 operator:operator
 
 # OpenLDAP Commands:
-View the OpenLDAP database config file to verify your LDAP settings (most will fall under the "/bitnami/openldap/slapd.d/cn=config" directory): 
+ -- View the OpenLDAP database config file to verify your LDAP settings (most will fall under the "/bitnami/openldap/slapd.d/cn=config" directory): 
  
- cat /bitnami/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}mdb.ldif
+ 	cat /bitnami/openldap/slapd.d/cn\=config/olcDatabase\=\{2\}mdb.ldif
 
-# Verify all entries below your base DN (See groups, users, OUs, etc.):
-  ldapsearch -x -H ldap://192.168.1.8:1389 -D "cn=boschrexroth,dc=bosch,dc=com" -W -b "dc=bosch,dc=com" -s sub "(objectclass=*)"
+-- Verify all entries below your base DN (See groups, users, OUs, etc.):
+
+  	ldapsearch -x -H ldap://192.168.1.8:1389 -D "cn=boschrexroth,dc=bosch,dc=com" -W -b "dc=bosch,dc=com" -s sub "(objectclass=*)"
  
-# View users:
-  ldapsearch -x -H ldap://192.168.1.8:1389 -D "cn=boschrexroth,dc=bosch,dc=com" -W -b "dc=bosch,dc=com" -s sub "(objectclass=inetOrgPerson)"
+-- View users:
+  	ldapsearch -x -H ldap://192.168.1.8:1389 -D "cn=boschrexroth,dc=bosch,dc=com" -W -b "dc=bosch,dc=com" -s sub "(objectclass=inetOrgPerson)"
  
 # Resources
 https://hub.docker.com/r/bitnami/openldap
