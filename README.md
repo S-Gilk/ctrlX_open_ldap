@@ -23,7 +23,10 @@ Simple preconfigured Docker OpenLDAP server for CtrlX OS demonstration.
 - Groupmembers attribute = member
 
 # RBAC Structure
-There are 3 groups with a single user in each group. grp_engineer, grp_maintenance, grp_operator
+There are 3 groups with a single user in each group. 
+- grp_engineer
+- grp_maintenance
+- grp_operator
 
 # User Credentials
 - engineer:engineer
@@ -40,6 +43,7 @@ There are 3 groups with a single user in each group. grp_engineer, grp_maintenan
   	ldapsearch -x -H ldap://192.168.1.8:1389 -D "cn=boschrexroth,dc=bosch,dc=com" -W -b "dc=bosch,dc=com" -s sub "(objectclass=*)"
  
 -- View users:
+
   	ldapsearch -x -H ldap://192.168.1.8:1389 -D "cn=boschrexroth,dc=bosch,dc=com" -W -b "dc=bosch,dc=com" -s sub "(objectclass=inetOrgPerson)"
  
 # Resources
