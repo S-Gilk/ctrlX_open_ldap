@@ -1,0 +1,27 @@
+networks:
+  openldap-network:
+    driver: bridge
+services:
+  openldap:
+    container_name: openldap
+    image: bitnami/openldap:latest
+    ports:
+      - 1389:1389
+      - 1636:1636
+    environment:
+      - LDAP_ROOT=dc=bosch,dc=com
+      - LDAP_ADMIN_USERNAME=boschrexroth
+      - LDAP_ADMIN_PASSWORD=boschrexroth
+      - LDAP_ADMIN_DN=cn=boschrexroth,dc=bosch,dc=com
+      - LDAP_ALLOW_ANON_BINDING=no
+      - BITNAMI_DEBUG=true
+    networks:
+      - openldap-network
+    volumes:
+      - ./volumes/data:/bitnami/openldap
+      - ./volumes/ldifs:/ldifs
+volumes:
+  data:
+    driver: local
+  ldifs:
+    driver: local

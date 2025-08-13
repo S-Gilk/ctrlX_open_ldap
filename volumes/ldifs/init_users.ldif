@@ -1,0 +1,75 @@
+#Base domain entries - converting AD-style DN to OpenLDAP format
+dn: dc=bosch,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+dc: bosch
+o: Bosch Rexroth
+
+#Organizational Units
+dn: ou=Users,dc=bosch,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Users
+
+dn: ou=Groups,dc=bosch,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Groups
+
+#Create the Engineer User
+dn: uid=engineer,ou=Users,dc=bosch,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: engineer
+cn: engineer
+sn: engineer
+mail: engineer@bosch.com
+userPassword: {SSHA}j+vs39npsyauHoSFnjgRTHHMB6NKeBYj
+
+#Create the "grp_engineer" Group
+dn: cn=grp_engineer,ou=groups,dc=bosch,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: grp_engineer
+member: uid=engineer,ou=users,dc=bosch,dc=com
+
+#Create the Maintenance User
+dn: uid=maintenance,ou=users,dc=bosch,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: maintenance
+cn: maintenance
+sn: maintenance
+mail: maintenance@bosch.com
+userPassword: {SSHA}f8lYJx2bsJ+6V3bsL6IOfK9Uzofen8n9
+
+#Create the "grp_maintenance" Group
+dn: cn=grp_maintenance,ou=groups,dc=bosch,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: grp_maintenance
+member: uid=maintenance,ou=users,dc=bosch,dc=com
+
+#Create the Operator User
+dn: uid=operator,ou=users,dc=bosch,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: operator
+cn: operator
+sn: operator
+mail: operator@bosch.com
+userPassword: {SSHA}RLNO3tchYuABHyfAcEXj3iQf94rnCjun
+
+#Create the "grp_operators" Group
+dn: cn=grp_operator,ou=groups,dc=bosch,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: grp_operator
+member: uid=operator,ou=users,dc=bosch,dc=com
