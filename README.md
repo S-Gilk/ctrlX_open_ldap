@@ -3,12 +3,12 @@ Simple preconfigured Docker OpenLDAP server for CtrlX OS demonstration.
 
 # How-To
 1. Install docker engine
-2. Run init_ldap.sh
+2. Run init_ldap.sh **(New System)**
 	- WARNING: This will overwrite existing database
 3. At the moment, permissions cannot be modeled from LDAP, so you will need to configure the group permissions locally on the CtrlX OS device. 
 	- In the future, we may be able to download permissions from a remote directory.
 	- I may add a REST API permission configuration script that a user can execute.
-4. Run restart.sh to restart an existing LDAP server with persisted changes.
+4. Run restart.sh to restart an existing LDAP server with persisted changes. **(Existing System)**
 
 # CtrlX OS Configuration
 - Authentication service = LDAP
