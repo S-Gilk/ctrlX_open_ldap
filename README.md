@@ -8,8 +8,7 @@ Simple preconfigured Docker OpenLDAP server for CtrlX OS demonstration.
 3. At the moment, permissions cannot be modeled from LDAP, so you will need to configure the group permissions locally on the CtrlX OS device. 
 	- In the future, we may be able to download permissions from a remote directory.
 	- I may add a REST API permission configuration script that a user can execute.
-4. If you would like to persist changes to the ldap container, uncomment the data volume in the docker-compose.yml.
-5. Run restart.sh to restart an existing LDAP server with persisted changes.
+4. Run restart.sh to restart an existing LDAP server with persisted changes.
 
 # RBAC Structure
 There are 3 groups with a single user in each group. grp_engineer, grp_maintenance, grp_operator
